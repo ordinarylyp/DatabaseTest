@@ -81,7 +81,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 SQLiteDatabase db=databaseHelper.getWritableDatabase();
                 //查询Book表中的所有数据
-                Cursor cursor=db.query("Book",null,null,null,null,null,null);
+                //Cursor cursor=db.query("Book",null,null,null,null,null,null);
+                Cursor cursor=db.rawQuery("select * from Book",null);
                 if (cursor.moveToFirst()){
                     do {
                         //遍历
@@ -96,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
                     }while (cursor.moveToNext());
                 }
                 cursor.close();
+
             }
         });
     }
