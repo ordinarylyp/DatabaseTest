@@ -41,7 +41,6 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         //执行建表语句
         db.execSQL(CREATE_BOOK);
         db.execSQL(GREATE_CATEGORY);
-        Toast.makeText(mContext,"创建成功",Toast.LENGTH_SHORT).show();
 
     }
 
